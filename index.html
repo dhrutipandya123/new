@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhruti | CI/CD Project</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            padding: 45px 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #61dafb;
+            font-size: 36px;
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        p {
+            color: #d6e2f0;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .status {
+            display: inline-block;
+            background: #123d32;
+            color: #65f0b5;
+            border: 1px solid #258768;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .tech span {
+            background: #304861;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: #aabbd0;
+            font-size: 13px;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 19px;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hello, I'm Dhruti!</h1>
+
+        <h2>My CI/CD Pipeline Project</h2>
+
+        <div class="status">● Deployment Project</div>
+
+        <p>
+            This website demonstrates automated deployment using
+            GitHub Actions, Docker, Docker Hub, AWS EC2 and Nginx.
+        </p>
+
+        <div class="tech">
+            <span>GitHub Actions</span>
+            <span>Docker</span>
+            <span>Docker Hub</span>
+            <span>AWS EC2</span>
+            <span>Nginx</span>
+        </div>
+
+        <footer>
+            Built by Dhruti | Cloud & DevOps Practical
+        </footer>
+    </div>
+</body>
+</html>
