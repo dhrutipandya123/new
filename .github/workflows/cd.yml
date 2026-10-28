@@ -1,0 +1,36 @@
+name: CD - Deploy to EC2
+
+on:
+  workflow_run:
+    workflows: ["CI - Build and Push Docker Image"]
+    types:
+      - completed
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: self-hosted
+
+    steps:
+      - name: Pull Docker Image
+        run: docker pull dhruti2005/ec2-nginx-cicd:latest
+
+      - name: Stop Existing Container
+        run: |
+          docker stop ec2-nginx-cicd || true
+          docker rm ec2-nginx-cicd || true
+
+      - name: Stop Host Nginx
+        run: sudo systemctl stop nginx || true
+
+      - name: Deploy Container
+        run: |
+          docker run -d \
+            --name ec2-nginx-cicd \
+            --restart unless-stopped \
+            -p 80:80 \
+            dhruti2005/ec2-nginx-cicd:latest
